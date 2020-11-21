@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Auto Federation Blocker",
+  "version": "0.1.0",
+  "description": "自動的に「ローカル限定」スイッチをONにするだけ",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://yakumo.foundation/*"],
+      "js": ["blocker.js"]
+    }
+  ]
+}
