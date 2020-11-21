@@ -11,5 +11,8 @@
       "matches": ["https://yakumo.foundation/*"],
       "js": ["auto-federation-blocker.js"]
     }
-  ]
+  ],
+  "icons": {
+    "128": "128.png"
+  }
 }
