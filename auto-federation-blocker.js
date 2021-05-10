@@ -1,6 +1,8 @@
 /** @param {number} timeout delay (ms) */
 const sleep = timeout => new Promise(resolve => setTimeout(resolve, timeout))
 
+let maxCharCount = "500"
+
 const toggleOffDoNotFederate = async () => {
     const composerOptionMenu = document.querySelector('[title="高度な設定"]')
     const menuActive = composerOptionMenu.classList.contains('active')
@@ -20,9 +22,15 @@ const toggleOffDoNotFederate = async () => {
     }
 }
 
+const init = () => {
+    // 最初に最大文字数を取得する
+    const counter = document.querySelector('.character-counter')
+    if (counter) maxCharCount = counter.textContent
+}
+
 const canToggleOff = () => {
     const counter = document.querySelector('.character-counter')
-    return counter && counter.textContent === "500"
+    return counter && counter.textContent === maxCharCount
 }
 
 const waitAndToggleOff = async () => {
@@ -50,5 +58,6 @@ publishButton.addEventListener('click', () => { // 送信ボタンクリック�
     waitAndToggleOff()
 })
 
+init()
 // ページ読み込み時の最初もONにする
 waitAndToggleOff()

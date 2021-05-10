@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Auto Federation Blocker",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "自動的に「ローカル限定」スイッチをONにするだけ",
   "content_scripts": [
     {
