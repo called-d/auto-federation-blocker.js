@@ -11,8 +11,8 @@ const toggleOffDoNotFederate = async () => {
         await sleep(200)
     }
 
-    const toggleSwitch = document.querySelector('[data-index="do_not_federate"]')
-    if (!toggleSwitch.classList.contains('active')) {
+    const toggleSwitch = [...document.querySelectorAll('.react-toggle + .content')].filter(content => content.innerText.includes('ローカル限定'))[0].previousElementSibling
+    if (!toggleSwitch.classList.contains('react-toggle--checked')) {
         toggleSwitch.click()
         await sleep(300)
     }
